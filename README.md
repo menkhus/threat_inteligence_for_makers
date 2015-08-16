@@ -1,15 +1,15 @@
 ## Security Threat Intelligence for Software Builders Testers and Maintainers
 
 ### These are the notes for a talk I am giving at the CSTTF
-conference in Colorado Sprigns, CO August 19,20 2015.
+###conference in Colorado Springs, CO August 19,20 2015.
 
 http://www.fbcinc.com/e/csttf/
 
 ### This is a talk meant to share the concepts of directed 
 ### threat discovery for software projects. The security
-### is someone outmoded for software creators. It's better
+### scanner is somewhat outmoded for software creators. It's better
 ### to look at the project's composition rather than count on
-### a security tool only.
+### a security scanning tool only.
 ### Mark Menkhus, August 2015
 
 This work is licensed under the Creative Commons Attribution 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by/3.0/
@@ -97,7 +97,7 @@ Requirements
 Design
 Implementation
 Verification
-Maintanence
+Maintenance
 
 Vulnerability management in your delivered product
 what 3rd party code did you leverage
@@ -136,7 +136,7 @@ SaaS used
 Tools used to produce software
 
 What is the intersection between sources of information and your business
-    Mashup
+    Mash-up
     Lookup
     Set theory
     Word association
