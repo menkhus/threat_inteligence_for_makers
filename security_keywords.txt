@@ -1,0 +1,68 @@
+Access Control Bypass
+Arbitrary File Deletion\|Arbitrary Command Execution\|Remote Arbitrary File Upload\|Arbitrary File Upload
+Authentication Bypass
+Buffer Overflow
+Cache Poisoning
+Certificate Validation
+Client Spoofing
+Code Execution
+Cross-Site Scripting\|Cross Site Scripting\|xss
+Cross-site Request Forgery
+Default Root Account
+Denial Of Service\|Denial of Service
+Directory Traversal
+Format String
+HTTP.response.split 
+Information Disclosure
+Insecure Library Loading
+Memory Corruption
+Multiple Remote
+Password Disclosure
+Privilege Escalation
+Remote Code Execution\|Remote Code Executio
+Remote Denial of Service
+Remote Heap Overflow
+Remote Integer Overflow
+Renegotiation Injection
+SQL Injection
+Scan Evasion
+Security Bypass
+Security Bypass\|Unauthorized Access\|Remote Privileged Access
+ToCToU
+Unauthorized Network Access
+Unauthorized Password Change
+Unspecified Security
+User-Changeable Password
+\sCERT\s|\-CERT\s|\sCERT-
+\sDoS\s
+\scsrf\s
+\sxss\s
+attack
+backdoor\|back.door
+buffer\soverflow
+bugtraq
+bypass
+countermeasure
+cross-site
+cross.site
+cve-
+denial 
+directory.traversal 
+double.free
+escalation
+exploit
+full-disclosure
+full\sdisclosure
+guessable
+inject
+malicious
+nessus
+nmap
+overflow
+predictable
+qualys
+root Command Execution
+secunia
+secur
+vulnerab
+www.securityfocus.com
