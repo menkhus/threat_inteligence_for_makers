@@ -5,7 +5,7 @@
 
 http://www.fbcinc.com/e/csttf/
 
-### This is a talk meant to share the concepts of directed 
+### This is a talk meant to share the concepts of directed
 ### threat discovery for software projects. The security
 ### scanner is somewhat outmoded for software creators. It's better
 ### to look at the project's composition rather than count on
@@ -14,7 +14,9 @@ http://www.fbcinc.com/e/csttf/
 
 This work is licensed under the Creative Commons Attribution 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by/3.0/
 
-   ** Part 0 ** 
+### Note: added a news gathering example, called feedslurp.py
+
+   ** Part 0 **
 Quote:
     "There is nothing concealed that will not be disclosed, or hidden that will not be made known."
 
@@ -44,15 +46,15 @@ Summary:
 "Choose to use intelligence to make informed risk management choices by reducing the problem domain to what is in scope for our product and responsibility."
 
 focus
-picture - http://www.factzoo.com/birds/spectacled-owl-striking-black-yellow-white.html 
+picture - http://www.factzoo.com/birds/spectacled-owl-striking-black-yellow-white.html
 
 Methodology:
 Understanding the composition of the software projects
 Understand the environment
-picture - http://thechicsite.com/2014/07/22/slow-cooker-black-bean-soup/ 
-    
+picture - http://thechicsite.com/2014/07/22/slow-cooker-black-bean-soup/
+
 Intelligence
-    requirements - Strategy, Plan, Scope, Action, Measurement 
+    requirements - Strategy, Plan, Scope, Action, Measurement
 
 Strategy
 Strategy We want want an outcome, we want to have
@@ -79,13 +81,13 @@ What are it's weaknesses
 how do I find this weakness in a sea of systems?
 
 Intelligence is the same whether defensive or offensive        
-Compositional analysis defines the direction of search. 
+Compositional analysis defines the direction of search.
 Version analysis defines the shape of the horizon
 Latent bugs define the technical debt of your systems
 Risk models inform your tolerance for vulnerability
 If you are delivering general purpose software, your risk models are soft.
 
-Conventional wisdom: 
+Conventional wisdom:
 The more specialized your software the more you can document the risks, use cases and narrow the
 requirement for risk response.
 APT and insider threat suggest that this is outmoded.
@@ -102,7 +104,7 @@ Maintenance
 Vulnerability management in your delivered product
 what 3rd party code did you leverage
 what services did you implement that has latent security bugs
-what services did you implement that has emergent 
+what services did you implement that has emergent
 security bugs
 
 Delivery as a lump
@@ -176,7 +178,7 @@ Manually evaluate reported versions against what is actually used
 Email a report and hold a meeting to evaluate
 
 Automated Analysis:
-    ** Search Package Name and Version information 
+    ** Search Package Name and Version information
     ** leverage CPE
     ** count the depth of technical debt in years
     ** count the depth in number of CVEs
@@ -197,7 +199,7 @@ Intelligence - Chatter, Noise, feeds, news, conferences
     ** Daily reporting
 
 The numbers - automation can read hundreds of thousands of articles a minute.
-    ** 
+    **
 
 Really? Does this work?
     Yes
