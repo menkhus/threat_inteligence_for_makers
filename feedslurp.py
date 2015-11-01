@@ -5,16 +5,15 @@
     creates a unique key for each item based on the title of the item
 
 depends on:
-    feedparser library, install with "$ pip install feedparser"
-    list_of_sites_to_mine.txt file, a list of rss feeds to read
-    rss_data.json file, a file to store all the previously read
-    items, and to store all the new items we find
+    * feedparser library, install with "$ pip install feedparser"
+
+    * feedslurp_sitelist.txt file, a list of rss feeds to read
 
 output:
-    rss_data.json file - this is the database of feeds that feedslurp generates
-    the data is in json form, basically it's the json from feedparser cleaned
-     a little for further use, and tagged with a signature, whish is thought to
-     be unique.
+    feedslurp_rss_data.json: this is the database of feeds which feedslurp
+    creates. The data is in JSON form, basically it's the JSON from feedparser,
+    cleaned up a little for further use. The data is tagged with a signature,
+    which is thought to be unique.
 
 Author:
     Mark Menkhus, menkhus@icloud.com
@@ -30,8 +29,8 @@ import json
 import time
 import hashlib
 
-site_list_file = 'list_of_sites_to_mine.txt'
-rss_data_file = 'rss_data.json'
+site_list_file = 'feedslurp_sitelist.txt'
+rss_data_file = 'feedslurp_rss_data.json'
 
 __version__ = "0.1"
 __author__ = "Mark Menkhus, menkhus@icloud.com"
@@ -59,10 +58,10 @@ def get_sig_list(rss_data_file):
     try:
         feed_items = open(rss_data_file, 'r').readlines()
     except IOError:
-        msg = """will try to create the database. and then
+        msg = """Initializing, will try to create the database. and then
 proceed with the first slurp.
         """
-        print "IOError: problem opening %s, %s" % (rss_data_file, msg)
+        print "IOError: problem opening %s. %s" % (rss_data_file, msg)
         feed_list_file = open(rss_data_file, 'a')
         feed_list_file.write('')
         feed_list_file.close()
@@ -97,22 +96,22 @@ def main():
                     # we don't want to write a duplicately titled entry
                     break
             except KeyError:
-                # if there is not title, then we just don't want this
+                # if there is no title, then we just don't want this
                 # rss item
                 pass
             except UnicodeError:
                 # sometimes there are nonascii characters in titles,
-                # if there is something a little difficult,we change then
-                # title, test for existance and store it.
-
+                # if there is something a little difficult, we change the
+                # title, test for previous existance and store it if new.
                 item['title'] = remove_non_ascii(item['title'])
                 item['signature'] = hashlib.sha256(item['title']).hexdigest()
                 if item['signature'] in all_sigs:
-                    # we don't want to write a duplicately titled entry
+                    # we don't want to write a duplicate titled entry
                     break
-            # feedparser passes parsed dates back rather than strings
-            # published_parsed and updated_parsed are not directly serializable
-            # in the json data, so we turn it into a human readable date
+            # feedparser yields time.struct_time dates back rather than date
+            # strings so published_parsed and updated_parsed are not directly
+            # serializable in the JSON data, so we turn it into a human
+            # readable date
             try:
                 if item['published_parsed']:
                     if isinstance(item['published_parsed'], time.struct_time):
@@ -135,7 +134,7 @@ def main():
                 feed_items.write(item)
                 feed_items.write('\n')
             except Exception as e:
-                print "** failed to store this entry: %s " % e,
+                print "feedslurp.main: ** failed to store this entry: %s " % e,
                 print "item: %s" % item
     feed_items.close()
     # end of main
