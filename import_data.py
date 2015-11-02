@@ -80,6 +80,7 @@ def write_json_data_to_db(database, rss_text_data_file):
         curs.execute(sql, (item,))
     conn.commit()
     conn.close()
+    return True
 
 
 def main():
