@@ -29,9 +29,6 @@ import json
 import time
 import hashlib
 
-site_list_file = 'feedslurp_sitelist.txt'
-rss_data_file = 'feedslurp_rss_data.json'
-
 __version__ = "0.1"
 __author__ = "Mark Menkhus, menkhus@icloud.com"
 
@@ -74,12 +71,7 @@ proceed with the first slurp.
     return all_sigs
 
 
-def main():
-    """ feedslurp.py
-        depends on a list of rss feeds
-        creates a file that will contain new news items appended
-        each time feedslurp is run.
-    """
+def get_rss_data(site_list_file, rss_data_file):
     feedlist = get_feed_list(site_list_file)
     all_sigs = get_sig_list(rss_data_file)
     feed_items = open(rss_data_file, 'aw')
@@ -137,6 +129,18 @@ def main():
                 print "feedslurp.main: ** failed to store this entry: %s " % e,
                 print "item: %s" % item
     feed_items.close()
+    return True
+
+
+def main():
+    """ feedslurp.py
+        depends on a list of rss feeds
+        creates a file that will contain new news items appended
+        each time feedslurp is run.
+    """
+    site_list_file = 'feedslurp_sitelist.txt'
+    rss_data_file = 'feedslurp_rss_data.json'
+    get_rss_data(site_list_file, rss_data_file)
     # end of main
 
 

@@ -1,2 +1,6 @@
 *.pyc
 .git
+feedslurp.db
+feedslurp_rss_data.json
+lda_demo.py
+long_list_of_sites.txt
